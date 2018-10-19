@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Trabalho2</string>
+    <string name="greetings">%s à aula de Android!</string>
+
+    <string name="fragment1_text">Fragment 1</string>
+    <string name="fragment2_text">Fragment 2</string>
+    <string name="fragment3_text">Fragment 3</string>
+</resources>
