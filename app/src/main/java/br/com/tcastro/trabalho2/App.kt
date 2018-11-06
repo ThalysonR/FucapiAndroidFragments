@@ -11,6 +11,7 @@ class App: Application() {
         Realm.init(this)
         val realmConfig = RealmConfiguration.Builder()
             .name(REALM_DB_NAME)
+            .deleteRealmIfMigrationNeeded()
             .build()
 
         Realm.setDefaultConfiguration(realmConfig)
