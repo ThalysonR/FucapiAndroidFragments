@@ -26,6 +26,12 @@ class CadastroViewModel: ViewModel() {
         }
     }
 
+    fun initFields() {
+        campoEmail.set("")
+        campoSenha.set("")
+        campoConfirmaSenha.set("")
+    }
+
     private fun findUser(email: String): Usuario? {
         return realm.where<Usuario>()
             .equalTo("email", email)
