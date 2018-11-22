@@ -19,9 +19,9 @@ class CadastroViewModel: ViewModel() {
     val formState: Observable<EstadosFormCadastro> = Observables.combineLatest(campoEmail.toRx(), campoSenha.toRx(), campoConfirmaSenha.toRx()) { email, senha, confirmaSenha ->
         when {
             (email.isEmpty()) -> EstadosFormCadastro.UsuarioVazio
+            (findUser(email) != null) -> EstadosFormCadastro.UsuarioJaCadastrado
             (senha.isEmpty()) -> EstadosFormCadastro.SenhaVazio
             (senha != confirmaSenha) -> EstadosFormCadastro.ConfirmarDiferente
-            (findUser(email) != null) -> EstadosFormCadastro.UsuarioJaCadastrado
             else -> EstadosFormCadastro.Valido
         }
     }
